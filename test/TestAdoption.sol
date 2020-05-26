@@ -2,7 +2,7 @@ pragma solidity ^0.5.0;
 
 import "truffle/Assert.sol";
 import "truffle/DeployedAddresses.sol";
-import "../contracts/Adoptions.sol";
+import "../contracts/Adoption.sol";
 
 contract TestAdoption {
   // The address of the adoption contract to be tested
@@ -18,7 +18,7 @@ contract TestAdoption {
   function testUserCanAdoptPet() public {
     uint returnedId = adoption.adopt(expectedPetId);
 
-    Assert.equal(returnedId, expectedId, "Adoption of the expected pet should match what is returned.");
+    Assert.equal(returnedId, expectedPetId, "Adoption of the expected pet should match what is returned.");
   }
 
   // Testing retrieval of a single pet's owner
